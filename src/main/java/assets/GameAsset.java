@@ -1,15 +1,16 @@
 
 package assets;
 
-import javax.swing.ImageIcon;
+import java.awt.Graphics;
+import java.awt.Image;
 
 
 public abstract class GameAsset {
     int x, y;
-    ImageIcon img;
+    Image img;
     String name;
 
-    public GameAsset(int x, int y, ImageIcon img, String name) {
+    public GameAsset(int x, int y, Image img, String name) {
         this.x = x;
         this.y = y;
         this.img = img;
@@ -28,11 +29,11 @@ public abstract class GameAsset {
         this.y = y;
     }
 
-    public ImageIcon getImg() {
+    public Image getImg() {
         return img;
     }
 
-    public void setImg(ImageIcon img) {
+    public void setImg(Image img) {
         this.img = img;
     }
 
@@ -44,5 +45,7 @@ public abstract class GameAsset {
         this.name = name;
     }
     
-    public abstract void swim(int x, int y);
+    public void draw(Graphics g) {
+        g.drawImage(img, x, y, null);
+    }
 }

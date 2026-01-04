@@ -1,24 +1,27 @@
 package assets.actors;
 
 import assets.GameAsset;
-import javax.swing.ImageIcon;
+import assets.objects.Item;
+import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Player extends GameAsset {
     
-    int hp;
+    List<Item> inventory = new ArrayList<Item>();
     
-    public Player(int x, int y, ImageIcon img, String name) {
+    public Player(int x, int y, Image img, String name) {
         super(x, y, img, name);
-        this.hp = 1000;
     }
 
-    @Override
-    public void swim(int x, int y) {
-
-    }
+    public void walk(int direction) {}
     
-    public void attack(int direction) {
-
+    public void jump(int direction) {}
+    
+    public void addItem (Item item) {}
+    
+    public Item getIteam (int pos) {
+        return inventory.get(pos);
     }
     
 }

@@ -5,7 +5,7 @@
 package assets.objects;
 
 import assets.GameAsset;
-import javax.swing.ImageIcon;
+import java.awt.Image;
 
 /**
  *
@@ -13,14 +13,8 @@ import javax.swing.ImageIcon;
  */
 public class Item extends GameAsset{
     
-    //Jakobsmuscheln, Waffe, Flosse?
-    
-    public Item(int x, int y, ImageIcon img, String name) {
+    public Item(int x, int y, Image img, String name) {
         super(x, y, img, name);
     }
 
-    @Override
-    public void swim(int x, int y) {
-    }
-    
 }
