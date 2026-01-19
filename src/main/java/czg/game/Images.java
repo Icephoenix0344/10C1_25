@@ -1,4 +1,4 @@
-package game;
+package czg.game;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+
+import static czg.MainWindow.PIXEL_SCALE;
 
 // Zentraler Zugriff auf Bilddateien im "src/main/resources"-Ordner
 public class Images {
@@ -19,15 +21,15 @@ public class Images {
     static final Image missingTexture;
 
     static {
-        missingTexture = new BufferedImage(8, 8, BufferedImage.TYPE_INT_RGB);
+        missingTexture = new BufferedImage(PIXEL_SCALE, PIXEL_SCALE, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = (Graphics2D) missingTexture.getGraphics();
 
         g.setColor(Color.BLACK);
-        g.fillRect(0,0,8,8);
+        g.fillRect(0,0,PIXEL_SCALE/2,PIXEL_SCALE/2);
 
         g.setColor(Color.MAGENTA);
-        g.fillRect(3,0,4,4);
-        g.fillRect(0,3,4,4);
+        g.fillRect(PIXEL_SCALE/2,0,PIXEL_SCALE/2,PIXEL_SCALE/2);
+        g.fillRect(0,PIXEL_SCALE/2,PIXEL_SCALE/2,PIXEL_SCALE/2);
     }
 
     /**
@@ -46,7 +48,10 @@ public class Images {
 
                 // Versuchen, das Bild zu laden. Die mögliche IOException
                 // wird abgefangen und resultiert in der missingTexture.
-                return ImageIO.read(stream);
+                Image result = ImageIO.read(stream);
+                // Konnte das Bild nicht gelesen werden, wird ebenfalls die
+                // missingTexture zurückgegeben.
+                return result == null ? missingTexture : result;
             } catch (IOException x) {
                 System.err.printf("Eingabe/Ausgabe-Fehler beim laden von %s%n", p);
                 return missingTexture;
