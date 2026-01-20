@@ -1,6 +1,8 @@
 package czg;
 
+import czg.objects.ExampleObject;
 import czg.scenes.SceneStack;
+import czg.scenes.TitleScreenScene;
 import czg.util.Input;
 
 import javax.swing.*;
@@ -54,9 +56,11 @@ public class MainWindow extends JFrame implements Runnable {
 
         // Szenen-Stapel hinzufügen
         SCENE_STACK = new SceneStack();
-        SCENE_STACK.addKeyListener(Input.INSTANCE);
-        SCENE_STACK.addMouseListener(Input.INSTANCE);
         setContentPane(SCENE_STACK);
+
+        // Tastatur- und Maus-Eingaben empfangen
+        addKeyListener(Input.INSTANCE);
+        addMouseListener(Input.INSTANCE);
 
         // Gesamtes Programm wird beendet, wenn das Fenster geschlossen wird
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -77,6 +81,12 @@ public class MainWindow extends JFrame implements Runnable {
 
         // Haupt-Schleife in einem neuen Thread starten
         new Thread(INSTANCE).start();
+
+        // DEBUG
+        TitleScreenScene titleScreenScene = new TitleScreenScene();
+        titleScreenScene.objects.add(new ExampleObject());
+        INSTANCE.SCENE_STACK.push(titleScreenScene);
+        System.out.println(titleScreenScene.objects.get(0));
     }
 
     /**

@@ -37,7 +37,15 @@ public class Input implements KeyListener, MouseListener {
         /**
          * Taste seit mehr als einem Frame gedrückt
          */
-        HELD
+        HELD;
+
+
+        /**
+         * @return Ob die Taste gedrückt ist, egal wie lange schon
+         */
+        public boolean isDown() {
+            return this == PRESSED || this == HELD;
+        }
     }
 
     /**

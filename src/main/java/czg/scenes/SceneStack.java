@@ -82,6 +82,10 @@ public class SceneStack extends JPanel {
 
         Graphics2D g2 = (Graphics2D) graphics;
 
+        // Anti-aliasing aktivieren (Text nicht pixelig darstellen)
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+
         // Alle Szenen zeichnen, die nicht verdeckt und so eingestellt sind,
         // dass sie deshalb ausgeblendet sein sollte.
         scenes.stream()
