@@ -16,12 +16,12 @@ wenn ihr sie braucht.
 ### 🖿 src - Spiel-Code, Test-Code, Bilder, Musik
 
   - 🖿 **main** - Dateien für das Projekt selbst
-    - <span style="color: #548af7;">🖿</span> **java** - Java-Code
+    - $\color{#548af7}\text{🖿}$ **java** - Java-Code
       - 📦 **czg** - Haupt-Code-Ordner
         - 📦 **objects** - Alles rund um Spielobjekte
         - 📦 **scenes** - Alles rund um Szenen
         - 📦 **util** - Hilfreiche Funktionen, die überall im Projekt gebraucht werden können
-    - <span style="color: #f2c55c;">🖿</span> **resources** - Bilder, Musik...
+    - $\color{#f2c55c}\text{🖿}$ **resources** - Bilder, Musik...
       - 🖿 **assets** - Haupt-Ordner
           - 🖿 **backgrounds** - Hintergründe für Szenen
           - 🖿 **characters** - Sprites für Charaktere
@@ -29,10 +29,10 @@ wenn ihr sie braucht.
           - 🖿 **items** - Sprites für Items
           - 🖿 **sound** - Musik & Soundeffekte
   - 🖿 **test** - Separater Code zum Testen von Programmteilen
-    - <span style="color: #57965c;">🖿</span> **java** - Java-Code
+    - $\color{#57965c}\text{🖿}$ **java** - Java-Code
       - 📦 **czg** - Haupt-Test-Code-Ordner
         - 📦 **scenes** - Tests für Szenen
-    - <span style="color: #f2c55c;">🖿</span> **resources** - Eventuelle Dateien, die für Tests benötigt werden
+    - $\color{#f2c55c}\text{🖿}$ **resources** - Eventuelle Dateien, die für Tests benötigt werden
 
 ---
 
